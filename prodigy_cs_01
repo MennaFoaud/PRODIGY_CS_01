@@ -1,0 +1,21 @@
+message=input("enter message=")
+num=int(input("enter num of caesar cipher placements you want to move each letter="))
+char_arr=list(message)
+encrypted_message=[]
+for char in char_arr:
+    if char.isalpha(): #check if the message is made up of letters
+        shifted=chr(ord(char)+num)
+        if char.islower() and shifted >"z": #and just to make sure that is lower letters only 
+             shifted=chr(ord(shifted)-26)
+        elif char.isupper()and shifted >"Z":
+            shifted=chr(ord(shifted)-26)
+        encrypted_message.append(shifted)        
+
+
+    else:  
+        encrypted_message.append(char)   
+
+encrypted="".join(encrypted_message)  
+decrypted=message
+print ("encrypted=",encrypted)
+print("decrypted=",decrypted)
